@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+{% block title %}Liste des animaux{% endblock %}
+{% block body %}
+    <h1>Liste des animaux enregistrés</h1>
+    <a href="{{ path('animal_new') }}"><input type="button" value="Ajouter"/></a>
+
+    <table class="table">
+        <tr>
+            <th>Nom</th>
+            <th>Description</th>
+            <th>Actions</th>
+        </tr>
+        {% for animal in animals %}
+            <tr style="background-color: {{ animal.getCouleur() }}">
+                <td>{{ animal.nom }}</td>
+                <td>{{ animal.getDescription() }}</td>
+                <td>
+                    <a href="{{ path('animal_edit', { 'id': animal.id }) }}"><input type="button" value="Editer"/></a>
+
+                    {{ form_start(tabForms[animal.id]) }}
+                    <input type="submit" value="Supprimer">
+                    {{ form_end(tabForms[animal.id]) }}
+
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+
+    <a href="{{ path('animal_new') }}"><input type="button" value="Ajouter"/></a>
+{% endblock %}

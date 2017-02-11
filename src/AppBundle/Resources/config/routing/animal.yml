@@ -1,0 +1,49 @@
+animal_index:
+    path:     /
+    defaults: { _controller: "AppBundle:Animal:index" }
+    methods:  GET
+
+animal_new:
+    path:     /new
+    defaults: { _controller: "AppBundle:Animal:new" }
+    methods:  [GET, POST]
+
+mamifere_new:
+    path:     /new/mamifere
+    defaults: { _controller: "AppBundle:Mamifere:new" }
+    methods:  [GET, POST]
+
+oiseau_new:
+    path:     /new/oiseau
+    defaults: { _controller: "AppBundle:Oiseau:new" }
+    methods:  [GET, POST]
+
+reptile_new:
+    path:     /new/reptile
+    defaults: { _controller: "AppBundle:Reptile:new" }
+    methods:  [GET, POST]
+
+animal_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "AppBundle:Animal:edit" }
+    methods:  [GET, POST]
+
+mamifere_edit:
+    path:     /{id}/edit/mamifere
+    defaults: { _controller: "AppBundle:Mamifere:edit" }
+    methods:  [GET, POST]
+
+oiseau_edit:
+    path:     /{id}/edit/oiseau
+    defaults: { _controller: "AppBundle:Oiseau:edit" }
+    methods:  [GET, POST]
+
+reptile_edit:
+    path:     /{id}/edit/reptile
+    defaults: { _controller: "AppBundle:Reptile:edit" }
+    methods:  [GET, POST]
+
+animal_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "AppBundle:Animal:delete" }
+    methods:  DELETE

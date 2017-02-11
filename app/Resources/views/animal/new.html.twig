@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+{% block title %}Ajouter un animal{% endblock %}
+
+{% block body %}
+    <h1>Ajout d'un animal</h1>
+
+    <label for="categorie">Type : </label>
+    <select id="select_categorie" name="categorie">
+        <option></option>
+        {% for valeur, option in types %}
+            <option value="{{ valeur }}">{{ option }}</option>
+        {% endfor %}
+    </select><br>
+
+    <a href="{{ path('animal_index') }}">Retour à la liste</a>
+{% endblock %}
+
+{% block javascripts %}
+    <script type="text/javascript" src="{{ asset('js/jquery-3.1.1.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/javascript.js') }}"></script>
+{% endblock %}

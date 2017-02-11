@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+{% block title %}Ajouter un mamifère{% endblock %}
+
+{% block body %}
+    <h1>Ajout d'un mamifère</h1>
+
+    <label for="categorie">Type : </label>
+    <select id="select_categorie" name="categorie">
+        <option></option>
+        <option value="mamifere" selected>Mamifère</option>
+        <option value="oiseau">Oiseau</option>
+        <option value="reptile">Reptile</option>
+    </select>
+
+    {{ form_start(form) }}
+    {{ form_widget(form) }}
+    <input type="submit" value="Ajouter"/>
+    {{ form_end(form) }}
+
+    <a href="{{ path('animal_index') }}">Retour à la liste</a>
+{% endblock %}
+
+{% block javascripts %}
+    <script type="text/javascript" src="{{ asset('js/jquery-3.1.1.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/javascript.js') }}"></script>
+{% endblock %}
